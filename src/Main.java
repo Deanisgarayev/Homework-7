@@ -58,7 +58,7 @@ public class Main {
         do {
             System.out.println("Месяц " + month + " сумма накоплений ровна " + total + " рублей");
             month++;
-            total = total + total / 100 * 7;
+            total = total + (cash / 100 * 7);
             total = total + cash;
         } while (total <= 12_000_000);
     }
@@ -76,13 +76,14 @@ public class Main {
     public static void task6() {
         System.out.println("Задача 6");
         int month = 0;
-        int cash = 15000;
+        int cashHalfYear = 15000;
+        int cashMonth = cashHalfYear / 6;
         int total = 0;
         do {
             System.out.println("Месяц " + month + " сумма накоплений ровна " + total + " рублей");
             month = month + 6;
-            total = total + total / 100 * 7;
-            total = total + cash * 6;
+            total = total + cashMonth / 100 * 7;
+            total = total + cashMonth * 6 ;
         } while (month <= 108);
     }
 
@@ -95,12 +96,10 @@ public class Main {
 
     public static void task8() {
         System.out.println("Задача 8");
-        int a = 0;
         int comet = 79;
-        int zero = 0;
-        int centuryAgo = 1923;
+        int centuryAgo = 1823;
         int time = centuryAgo / comet;
-        int date = comet * time;
+        int date = comet * time + comet;
         do {
             System.out.println("В " + date + " год над Землей пролетает комета");
             date = date + comet;
