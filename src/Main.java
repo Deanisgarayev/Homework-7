@@ -100,9 +100,7 @@ public class Main {
         int zero = 0;
         int centuryAgo = 1923;
         int time = centuryAgo / comet;
-        System.out.println("Количество раз " + time);
         int date = comet * time;
-        System.out.println("Дата " + date);
         do {
             System.out.println("В " + date + " год над Землей пролетает комета");
             date = date + comet;
