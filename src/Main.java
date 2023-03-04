@@ -52,38 +52,36 @@ public class Main {
 
     public static void task4() {
         System.out.println("Задача 4");
-        int month = 0;
         int cash = 15000;
-        int total = 0;
-        do {
-            System.out.println("Месяц " + month + " сумма накоплений ровна " + total + " рублей");
-            month++;
-            total = total + total / 100 * 7;
-            total = total + cash;
-        } while (total <= 12_000_000);
+        for ( int month = 1; cash < 12_000_000; month++) {
+            cash = cash + cash / 100 * 7;
+            System.out.println("Месяц " + month + " сумма накоплений ровна " + cash + " рублей");
+        }
     }
 
     public static void task5() {
         System.out.println("Задача 5");
-        int cash = 22023;
-        int total = 0;
-        for (int a = 6; a <= 24; a = a + 6) {
-            total = total + (cash * 6);
-            System.out.println("Месяц " + a + " сумма накоплений ровна " + total + " рублей");
+        int month = 1;
+        int cash = 15000;
+        while (cash < 12_000_000) {
+            cash = cash + cash / 100 * 7;
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + " сумма накоплений ровна " + cash + " рублей");
+            }
+            month++;
         }
     }
 
     public static void task6() {
         System.out.println("Задача 6");
-        int month = 0;
+        int month = 1;
         int cash = 15000;
-        int total = 0;
-        do {
-            System.out.println("Месяц " + month + " сумма накоплений ровна " + total + " рублей");
-            month = month + 6;
-            total = total + total / 100 * 7;
-            total = total + cash * 6;
-        } while (month <= 108);
+        for (; month <= 9 * 12; month++){
+            cash = cash + cash / 100 * 7;
+            System.out.println("Месяц " + month + " сумма накоплений ровна " + cash + " рублей");
+            if (month % 6 == 0){
+            }
+        }
     }
 
     public static void task7() {
@@ -95,14 +93,10 @@ public class Main {
 
     public static void task8() {
         System.out.println("Задача 8");
-        int a = 0;
         int comet = 79;
-        int zero = 0;
-        int centuryAgo = 1923;
+        int centuryAgo = 1823;
         int time = centuryAgo / comet;
-        System.out.println("Количество раз " + time);
-        int date = comet * time;
-        System.out.println("Дата " + date);
+        int date = comet * time + comet;
         do {
             System.out.println("В " + date + " год над Землей пролетает комета");
             date = date + comet;
