@@ -52,39 +52,36 @@ public class Main {
 
     public static void task4() {
         System.out.println("Задача 4");
-        int month = 0;
         int cash = 15000;
-        int total = 0;
-        do {
-            System.out.println("Месяц " + month + " сумма накоплений ровна " + total + " рублей");
-            month++;
-            total = total + (cash / 100 * 7);
-            total = total + cash;
-        } while (total <= 12_000_000);
+        for ( int month = 1; cash < 12_000_000; month++) {
+            cash = cash + cash / 100 * 7;
+            System.out.println("Месяц " + month + " сумма накоплений ровна " + cash + " рублей");
+        }
     }
 
     public static void task5() {
         System.out.println("Задача 5");
-        int cash = 22023;
-        int total = 0;
-        for (int a = 6; a <= 24; a = a + 6) {
-            total = total + (cash * 6);
-            System.out.println("Месяц " + a + " сумма накоплений ровна " + total + " рублей");
+        int month = 1;
+        int cash = 15000;
+        while (cash < 12_000_000) {
+            cash = cash + cash / 100 * 7;
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + " сумма накоплений ровна " + cash + " рублей");
+            }
+            month++;
         }
     }
 
     public static void task6() {
         System.out.println("Задача 6");
-        int month = 0;
-        int cashHalfYear = 15000;
-        int cashMonth = cashHalfYear / 6;
-        int total = 0;
-        do {
-            System.out.println("Месяц " + month + " сумма накоплений ровна " + total + " рублей");
-            month = month + 6;
-            total = total + cashMonth / 100 * 7;
-            total = total + cashMonth * 6 ;
-        } while (month <= 108);
+        int month = 1;
+        int cash = 15000;
+        for (; month <= 9 * 12; month++){
+            cash = cash + cash / 100 * 7;
+            System.out.println("Месяц " + month + " сумма накоплений ровна " + cash + " рублей");
+            if (month % 6 == 0){
+            }
+        }
     }
 
     public static void task7() {
